@@ -1,8 +1,7 @@
 <p align="center">
-  <img src="screenshots/gh-welcome.png" width="160" alt="Welcome Screen" />
-  <img src="screenshots/gh-terminal.png" width="160" alt="Terminal View" />
-  <img src="screenshots/gh-diff.png" width="160" alt="Diff Review" />
-  <img src="screenshots/gh-sessions.png" width="160" alt="Sessions" />
+  <img src="screenshots/mockups/mockup-welcome.png" width="180" alt="Welcome Screen" />
+  <img src="screenshots/mockups/mockup-terminal.png" width="180" alt="Terminal View" />
+  <img src="screenshots/mockups/mockup-diff.png" width="180" alt="Diff Review" />
 </p>
 
 <h1 align="center">WristCode</h1>
@@ -57,14 +56,14 @@ Every prompt you send from the watch runs through the actual `claude` CLI on you
 <p align="center">
 <table>
 <tr>
-<td align="center"><img src="screenshots/gh-welcome.png" width="140"/><br/><sub>Welcome</sub></td>
-<td align="center"><img src="screenshots/gh-sessions.png" width="140"/><br/><sub>Sessions</sub></td>
-<td align="center"><img src="screenshots/gh-terminal.png" width="140"/><br/><sub>Terminal</sub></td>
+<td align="center"><img src="screenshots/mockups/mockup-welcome.png" width="160"/><br/><sub>Welcome</sub></td>
+<td align="center"><img src="screenshots/mockups/mockup-sessions.png" width="160"/><br/><sub>Sessions</sub></td>
+<td align="center"><img src="screenshots/mockups/mockup-terminal.png" width="160"/><br/><sub>Terminal</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="screenshots/gh-diff.png" width="140"/><br/><sub>Diff Review</sub></td>
-<td align="center"><img src="screenshots/gh-settings.png" width="140"/><br/><sub>Settings</sub></td>
-<td align="center"><img src="screenshots/gh-pairing.png" width="140"/><br/><sub>Pairing</sub></td>
+<td align="center"><img src="screenshots/mockups/mockup-diff.png" width="160"/><br/><sub>Diff Review</sub></td>
+<td align="center"><img src="screenshots/mockups/mockup-settings.png" width="160"/><br/><sub>Settings</sub></td>
+<td align="center"><img src="screenshots/mockups/mockup-pairing.png" width="160"/><br/><sub>Pairing</sub></td>
 </tr>
 </table>
 </p>
